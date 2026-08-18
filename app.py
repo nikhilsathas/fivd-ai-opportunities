@@ -41,8 +41,17 @@ if not SOURCE_HTML.exists():
     st.error(f"The presentation file could not be found: {SOURCE_HTML}")
     st.stop()
 
+app_html = SOURCE_HTML.read_text(encoding="utf-8")
+app_html = app_html.replace(
+    "Generator testing & emissions compliance copilot",
+    "Generator Testing & Emissions Compliance Manager",
+).replace(
+    "Commissioning evidence & anomaly copilot",
+    "Commissioning Evidence & Exception Manager",
+)
+
 components.html(
-    SOURCE_HTML.read_text(encoding="utf-8"),
+    app_html,
     height=2200,
     scrolling=True,
 )
