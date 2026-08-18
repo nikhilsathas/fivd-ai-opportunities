@@ -42,12 +42,26 @@ if not SOURCE_HTML.exists():
     st.stop()
 
 app_html = SOURCE_HTML.read_text(encoding="utf-8")
-app_html = app_html.replace(
+app_html = app_html.replace("17 August 2026", "August 2026").replace(
     "Generator testing & emissions compliance copilot",
     "Generator Testing & Emissions Compliance Manager",
 ).replace(
     "Commissioning evidence & anomaly copilot",
     "Commissioning Evidence & Exception Manager",
+)
+app_html = app_html.replace(
+    "</style>",
+    """
+    .wrap { padding-bottom: 56px; }
+    header.top { padding-top: 16px; }
+    header.top .wrap { padding-bottom: 0; }
+    .brand { margin-bottom: 10px; }
+    .sub { font-size: 13px; max-width: 1180px; margin-top: 6px; }
+    nav { margin-top: 10px; }
+    section { padding-top: 20px; }
+    </style>
+    """,
+    1,
 )
 
 components.html(
