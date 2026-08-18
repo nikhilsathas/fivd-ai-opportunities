@@ -495,7 +495,7 @@ function storyDraw(){
  document.getElementById('storyTitle').textContent=s.title;
  document.getElementById('storyCount').textContent=STORYSTATE.page+' / '+s.slides;
  var img=document.getElementById('storyImg');
- img.src='/app/static/stories/'+STORYSTATE.id+'/slide-'+STORYSTATE.page+'.png';
+ img.src='https://raw.githubusercontent.com/nikhilsathas/fivd-ai-opportunities/main/static/stories/'+STORYSTATE.id+'/slide-'+STORYSTATE.page+'.png';
  img.alt=s.title+', slide '+STORYSTATE.page+' of '+s.slides;
  document.getElementById('storyPrev').disabled=STORYSTATE.page===1;
  document.getElementById('storyNext').disabled=STORYSTATE.page===s.slides;
